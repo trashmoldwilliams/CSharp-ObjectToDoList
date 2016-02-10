@@ -2,6 +2,8 @@ using System.IO;
 using Microsoft.AspNet.Builder;
 using Nancy.Owin;
 using Nancy;
+using Nancy.ViewEngines.Razor;
+using System.Collections.Generic;
 
 namespace FriendLetter
 {
@@ -19,4 +21,21 @@ namespace FriendLetter
       return Directory.GetCurrentDirectory();
     }
   }
+  public class RazorConfig : IRazorConfiguration
+ {
+   public IEnumerable<string> GetAssemblyNames()
+   {
+     return null;
+   }
+
+   public IEnumerable<string> GetDefaultNamespaces()
+   {
+     return null;
+   }
+
+   public bool AutoIncludeModelNamespace
+   {
+     get { return false; }
+   }
+ }
 }
